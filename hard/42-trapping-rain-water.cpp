@@ -28,12 +28,12 @@ public:
                     }
                     else {
                         // Caclculate the space between index 1 and 2
-                        total_trap += i - first_index;
+                        cout << "distance " << i << "-" << first_index << "=" << i-first_index-1 << endl;
+                        cout << "first index in loop: " << first_index << endl;
+                        total_trap += i - first_index -1;
                         cout << endl << "total trap: " << total_trap << endl;
                         first_index = i;
-                        cout << "first index in loop: " << first_index << endl;
                         cout << "===============" << endl;
-                        break;
                     }
                 }
             }
