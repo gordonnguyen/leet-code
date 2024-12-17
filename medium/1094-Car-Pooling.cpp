@@ -28,11 +28,18 @@ public:
             if (trip[2]+1 > loc.size()) {
                 loc.resize(trip[2] + 1, 0);
             }
-            // Iterate each trip [passengers, from, to]
-            for (int i=trip[1]; i<=trip[2]; i++) {
+            // Iterate each trip [passengers, from, to] to the loc list
+            for (int i=trip[1]; i <= trip[2]-1; i++) {
                 loc[i] += trip[0];
-            } 
+                if (loc[i] > max_psg) {
+                    max_psg = loc[i];
+                    cout << "max psg: " << max_psg << " | " << i << endl;
+                }
+            }
         }
+
+        
+        // Test Print
         cout << loc.size() << " | ";
         for (auto const& value: loc) {
             cout << value << " ";
@@ -47,7 +54,8 @@ public:
 };
 
 int main() {
+    // Test case
     Solution sol;
-    vector<vector<int>> sample_trip = {{2,1,5},{3,3,7}};
-    cout << sol.carPooling(sample_trip, 5) << endl;
+    vector<vector<int>> sample_trip = {{2,1,5},{3,5,7}};
+    cout << sol.carPooling(sample_trip, 3) << endl;
 };
