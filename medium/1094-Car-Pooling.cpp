@@ -46,6 +46,7 @@ public:
         }
         cout << endl;
 
+        // Return true if max_psg less than capacity
         if (max_psg <= capacity) {
             return true;
         }
